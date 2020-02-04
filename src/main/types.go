@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func typeDemo() {
 	var foo int = 10
 	var b bool = true
 	fmt.Printf("%T\n", foo)

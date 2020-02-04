@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func ArrayDemo() {
 	fmt.Println("Array Demo")
 
 	var x [5]int

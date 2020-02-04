@@ -8,7 +8,7 @@ const st = 10
 
 const (
 	a = 10
-	b = 20 
+	b = 20
 )
 
 const (
@@ -16,7 +16,7 @@ const (
 	d = iota
 )
 
-func main() {
+func varDemo() {
 	var bar = 10
 	fmt.Println(foo, bar)
 
@@ -26,5 +26,5 @@ func main() {
 
 	fmt.Println(a)
 	fmt.Println(b)
-	
+
 }
