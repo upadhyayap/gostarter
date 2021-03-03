@@ -6,9 +6,11 @@ import (
 
 func main() {
 	fmt.Println("Starting")
-	ArrayDemo()
-	shorthandDemo()
-	stringDemo()
-	typeDemo()
-	varDemo()
+	// ArrayDemo()
+	// shorthandDemo()
+	// stringDemo()
+	// typeDemo()
+	// varDemo()
+	//mapsDemo()
+	StructDemo()
 }
