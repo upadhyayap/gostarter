@@ -12,5 +12,8 @@ func main() {
 	// typeDemo()
 	// varDemo()
 	//mapsDemo()
-	StructDemo()
+	//StructDemo()
+	//methodDemo()
+	//funcDemo()
+	closureDemo()
 }

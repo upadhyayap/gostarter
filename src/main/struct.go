@@ -31,7 +31,7 @@ func StructDemo() {
 	sa2 := secretAgent{
 		person: person{
 			first: "sardar",
-			last:  "khan",
+			last:  "bhai",
 			age:   34,
 		},
 		ltk: true,

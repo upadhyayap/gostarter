@@ -28,4 +28,6 @@ func ArrayDemo() {
 
 	fmt.Print(y[1:])    // slice array from index 1 to end
 	fmt.Println(y[1:3]) // will slice array from index 1 to 3 Not including end index
+
+	// Slice has length and capacity
 }
