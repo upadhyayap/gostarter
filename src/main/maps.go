@@ -11,7 +11,7 @@ func mapsDemo() {
 	m := map[string]int{
 		"anand":  32,
 		"aditya": 41,
-	}
+	} // composite literal
 
 	//map["anand"]type
 

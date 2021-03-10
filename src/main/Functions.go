@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// function decleration ; Func (r Receiver) Identifier(parameters) returns {....}
+// function decleration ; Func (r Receiver) Identifier(parameters) (int,bool)) {....}
 // function are first class citizen in go. you can assign a function type and return a function type
 func funcDemo() {
 	fmt.Println("functions Demo")
@@ -15,16 +15,16 @@ func funcDemo() {
 
 	// Anonymous function, similar to IIFE in javascript
 
-	func(x int) {
+	func(x int, y bool) {
 		fmt.Println("Anonymous function execution", x)
-	}(10)
+	}(10, false)
 
 	// function expression. func() is an internal type in go
 	f := func() {
 		fmt.Println("This is function expression")
 	}
 	f()
-	fmt.Printf("%T\n", f)
+	fmt.Printf("%T\n", f) // func()
 
 	// Returning a function
 	f1 := returnFunc()
@@ -36,6 +36,10 @@ func funcDemo() {
 	sumEven := evenOp(sumFunc, vals...)
 	//sum1 := evenOp(sum, vals...) // function ref can be directly passed
 	fmt.Println(sumEven)
+
+	x, _ := fooMulti("anand")
+
+	fmt.Println(x)
 }
 
 func fooSingle(s string) string {
@@ -53,8 +57,9 @@ func fooVariadic(x ...int) {
 	fmt.Printf("%T\n", x) // return will be Slice int []int
 }
 
-// 0 or more parameters of type int
+// 0 or more parameters of type int, variadic paramter
 func unfurlSlice(x ...int) int {
+	fmt.Printf("%T\n", x) // slice int
 	sum := 0
 
 	for _, v := range x {

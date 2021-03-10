@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//encapsulates data
 type person struct {
 	first string
 	last  string

@@ -4,7 +4,7 @@ import "fmt"
 
 type hotdog int
 
-func typeDemo() {
+func typeConversionDemo() {
 	fmt.Println("Type demo")
 
 	var x hotdog = 10

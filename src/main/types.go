@@ -22,5 +22,4 @@ func typeDemo() {
 	// bar is converted to int and now can be assigned to foo
 	foo = int(bar)
 	fmt.Println(foo)
-
 }

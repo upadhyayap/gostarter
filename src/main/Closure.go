@@ -12,6 +12,8 @@ func closureDemo() {
 		y := 100
 		fmt.Println(y)
 	}
+
+	//fmt.Println(y)
 	//fmt.Println(y) // Error y will be undefined here because it's scope is lmited to above closure scope
 	inc := incrementor()
 	fmt.Println(inc())
