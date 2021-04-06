@@ -13,7 +13,7 @@ import (
 // Main function inside main package is the entry point for go program
 func main() {
 	fmt.Println("Starting")
-	// ArrayDemo()
+	ArrayDemo()
 	// shorthandDemo()
 	// stringDemo()
 	// typeDemo()
