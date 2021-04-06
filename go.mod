@@ -1,4 +1,4 @@
-module codetogo
+module gostarter
 
 go 1.16
 
