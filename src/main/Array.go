@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func ArrayDemo() {
@@ -30,4 +31,44 @@ func ArrayDemo() {
 	fmt.Println(y[1:3]) // will slice array from index 1 to 3 Not including end index
 
 	// Slice has length and capacity
+
+	SortDemo()
+}
+
+func SortDemo() {
+	fmt.Println("sort Demo")
+
+	s := []int{5, 4, 7, 2, 8, 19, 1}
+	sort.Ints(s)
+
+	fmt.Println(s)
+
+	sort.Strings([]string{"a", "b"})
+
+}
+
+type SortByAge []Person
+
+func (a SortByAge) Len() int           { return len(a) }
+func (a SortByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a SortByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
+
+func CustomSort() {
+	p1 := Person{
+		First: "Anand",
+		Last:  "upadhyay",
+		Age:   30,
+	}
+
+	p2 := Person{
+		First: "Aditya",
+		Last:  "Gaurav",
+		Age:   32,
+	}
+
+	people := []Person{p1, p2}
+
+	sort.Sort(SortByAge(people))
+
+	fmt.Println(people)
 }

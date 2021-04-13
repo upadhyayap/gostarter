@@ -10,6 +10,11 @@ import (
 	"fmt"
 )
 
+// gets called for initialization before main func
+func init() {
+	fmt.Println("Init func called")
+}
+
 // Main function inside main package is the entry point for go program
 func main() {
 	fmt.Println("Starting")
@@ -25,5 +30,10 @@ func main() {
 	//closureDemo()
 	//stringDemo()
 	//DeferDemo()
-	PointerDemo()
+	//PointerDemo()
+	//jsonDemo()
+	//SortDemo()
+	//bcryptDemo()
+	//ConcurrencyDemo()
+	raceConditionDemo()
 }
