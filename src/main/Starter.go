@@ -35,5 +35,11 @@ func main() {
 	//SortDemo()
 	//bcryptDemo()
 	//ConcurrencyDemo()
-	raceConditionDemo()
+	//mutexDemo()
+	//atomicDemo()
+	//usingChannels()
+	//RangeOverChannel()
+	//SelectDemo()
+	//FanOutDemo()
+	ContextDemo()
 }

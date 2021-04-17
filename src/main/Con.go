@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"sync/atomic"
 )
 
 /*
@@ -86,4 +87,60 @@ func raceConditionDemo() {
 	fmt.Println("no of CPUS are : ", runtime.NumCPU())
 	fmt.Println("no of go routines are : ", runtime.NumGoroutine())
 	fmt.Println("counter value is: ", counter)
+}
+
+func mutexDemo() {
+	fmt.Println("no of CPUS are : ", runtime.NumCPU())
+	fmt.Println("no of go routines are : ", runtime.NumGoroutine())
+
+	counter := 0
+
+	gs := 100
+
+	var wg sync.WaitGroup
+	var mutex sync.Mutex
+	wg.Add(gs)
+
+	for i := 0; i < gs; i++ {
+		go func() {
+			mutex.Lock()
+			v := counter
+			//runtime.Gosched()
+			v++
+			counter = v
+			mutex.Unlock()
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+
+	fmt.Println("no of CPUS are : ", runtime.NumCPU())
+	fmt.Println("no of go routines are : ", runtime.NumGoroutine())
+	fmt.Println("counter value is: ", counter)
+}
+
+func atomicDemo() {
+	fmt.Println("no of CPUS are : ", runtime.NumCPU())
+	fmt.Println("no of go routines are : ", runtime.NumGoroutine())
+
+	var counter int64
+
+	gs := 100
+
+	var wg sync.WaitGroup
+	wg.Add(gs)
+
+	for i := 0; i < gs; i++ {
+		go func() {
+			atomic.AddInt64(&counter, 1)
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+
+	fmt.Println("no of CPUS are : ", runtime.NumCPU())
+	fmt.Println("no of go routines are : ", runtime.NumGoroutine())
+	fmt.Println("counter value is: ", atomic.LoadInt64(&counter))
 }
