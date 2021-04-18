@@ -72,3 +72,17 @@ func CustomSort() {
 
 	fmt.Println(people)
 }
+
+func testingArray() []int {
+	return []int{1, 2}
+}
+
+func avgArray(data []int) float64 {
+	var sum float64
+
+	for _, val := range data { // _ is index
+		sum += float64(val)
+	}
+
+	return sum / float64(len(data))
+}
